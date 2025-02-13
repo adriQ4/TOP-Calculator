@@ -1,36 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TOP CALCULATOR</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="calculator-box">
-      <div class="screen"></div>
-      <div class="btn-box">
-        <button class="btn btn-ce">CE</button>
-        <button class="btn btn-del">DEL</button>
-        <button class="btn btn-operators">%</button>
-        <button class="btn btn-operators">/</button>
-        <button class="btn btn-number-seven">7</button>
-        <button class="btn btn-number-eight">8</button>
-        <button class="btn btn-number-nine">9</button>
-        <button class="btn btn-operators">*</button>
-        <button class="btn btn-number-three">3</button>
-        <button class="btn btn-number-four">4</button>
-        <button class="btn btn-number-five">5</button>
-        <button class="btn btn-operators">-</button>
-        <button class="btn btn-number-six">6</button>
-        <button class="btn btn-number-one">1</button>
-        <button class="btn btn-number-two">2</button>
-        <button class="btn btn-operators btn-add">+</button>
-        <button class="btn btn-number-cero">0</button>
-        <button class="btn btn-point">.</button>
-        <button class="btn btn-operators btn-equal">=</button>
-      </div>
-    </header>
+    <main class="container">
+      <div
+        class="display"
+        aria-live="polite"
+        aria-label="Calculadora display"
+      ></div>
+      <!-- Botones -->
+      <button class="btns btn-ac" aria-label="Contador a cero">AC</button>
+      <button class="btns btn-del" aria-label="Eliminar dígito">DEL</button>
+      <button class="btns btn-percent" aria-label="Porcentaje">%</button>
+      <button class="btns btn-divide" aria-label="Dividir">/</button>
+      <button class="btns btn-7" aria-label="siete">7</button>
+      <button class="btns btn-8" aria-label="ocho">8</button>
+      <button class="btns btn-9" aria-label="nueve">9</button>
+      <button class="btns btn-multiply" aria-label=" de multiplicar">*</button>
+      <button class="btns btn-4" aria-label="cuatro">4</button>
+      <button class="btns btn-5" aria-label="cinco">5</button>
+      <button class="btns btn-6" aria-label="seis">6</button>
+      <button class="btns btn-subtract" aria-label=" de restar">-</button>
+      <button class="btns btn-1" aria-label="uno">1</button>
+      <button class="btns btn-2" aria-label="dos">2</button>
+      <button class="btns btn-3" aria-label="tres">3</button>
+      <button class="btns btn-plus" aria-label="sumar">+</button>
+      <button class="btns btn-zero" aria-label="cero">0</button>
+      <button class="btns btn-point" aria-label="punto decimal">.</button>
+      <button class="btns btn-result" aria-label="total">=</button>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

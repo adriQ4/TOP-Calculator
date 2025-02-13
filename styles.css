@@ -1,73 +1,150 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.calculator-box {
-  width: 420px;
-  /* height: 100%; */
-  background-color: darkgrey;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  border-radius: 4px;
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
 }
 
-.screen {
-  background-color: aliceblue;
-  width: 100%;
-  border: solid 2px gray;
-  border-radius: 4px;
-  font-size: 3rem;
-  flex: 1 1 100px;
-  text-align: end;
-  overflow: hidden;
-}
-.btn-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
-  margin-top: 5px;
-  gap: 5px;
-}
-.btn {
-  height: 90px;
-  border-radius: 4px;
-  font-size: 2rem;
-  flex: 1 1 90px;
+/* Contenedor */
+.container {
+  background-color: #f4f4f9;
+  border: 3px solid #ccc;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 150px auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Altura completa por defecto */
+  width: 100vw; /* Ancho completo por defecto */
 }
 
-.btn-operators,
-.btn-ce,
-.btn-del {
+/* Display */
+.display {
+  background-color: #282c34;
+  color: #ffffff;
+  border: 2px solid #444;
+  border-radius: 10px;
+  grid-column: 1 / -1;
+  font-family: "Courier New", monospace;
+  font-size: 2.5rem;
+  padding: 20px;
+  text-align: right;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+.btns {
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 8px;
   font-size: 1.5rem;
-  background-color: lightcoral;
+  font-weight: bold;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
-.btn-point,
-.btn-number-cero {
-  flex-grow: 1;
+.btn-plus {
+  grid-row: span 2;
 }
 
-.btn-equal {
-  flex: 2 185px;
+.btns:hover {
+  background-color: #d4d4d4;
+  transform: scale(1.05);
 }
 
-.btn-ce {
-  background-color: cadetblue;
+.btns:active {
+  background-color: #bcbcbc;
+  transform: scale(0.95);
 }
 
+/* Botones especiales */
+.btn-ac,
 .btn-del {
-  background-color: gainsboro;
+  background-color: #f94144;
+  color: white;
+}
+
+.btn-ac:hover,
+.btn-del:hover {
+  background-color: #f3722c;
+}
+
+/* Botones de operadores */
+.btn-add,
+.btn-subtract,
+.btn-multiply,
+.btn-divide,
+.btn-percent,
+.btn-plus {
+  background-color: #f9c74f;
+  color: #fff;
+}
+
+.btn-result {
+  background-color: #43aa8b;
+  color: white;
+}
+
+.btn-result:hover {
+  background-color: #4d908e;
+}
+
+.btn-point {
+  background-color: #e0e0e0;
+}
+
+/* ======= Media Queries ======= */
+
+/* Para pantallas más grandes (desktop): Calculadora centrada con tamaño fijo */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4; /* Fondo más claro para pantallas grandes */
+  }
+
+  .container {
+    max-width: 400px; /* Tamaño estándar fijo */
+    height: auto; /* Altura dinámica basada en el contenido */
+    width: 100%; /* Ocupa todo el ancho hasta el máximo */
+  }
+}
+
+/* Para móviles y tablets: Calculadora ocupa toda la pantalla */
+@media (max-width: 767px) {
+  .container {
+    height: 100vh; /* Altura completa */
+    width: 100vw; /* Ancho completo */
+    max-width: none; /* Sin límite de ancho */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+  }
+
+  .display {
+    font-size: 2rem; /* Tamaño más pequeño para móviles */
+    padding: 15px; /* Ajuste del espacio interno */
+  }
+
+  .btns {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+    padding: 10px; /* Espaciado interno ajustado */
+  }
 }
