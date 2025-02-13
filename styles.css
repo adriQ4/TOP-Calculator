@@ -3,3 +3,44 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.calculator-box {
+  width: 420px;
+  height: 100%;
+  background-color: darkgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+
+.screen {
+  background-color: aliceblue;
+  width: 90%;
+  height: 90px;
+  border: solid 2px gray;
+  border-radius: 4px;
+}
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  align-content: space-around;
+  margin-top: 5px;
+  gap: 5px;
+}
+.btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+}
